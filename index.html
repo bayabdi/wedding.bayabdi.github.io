@@ -35,6 +35,23 @@
         padding: 28px 28px 32px;
         border: 1px solid #eee6da;
       }
+      .hero {
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .hero img {
+        width: min(100%, 420px);
+        border-radius: 18px;
+        box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+        border: 5px solid rgba(255,255,255,0.8);
+      }
+      .names {
+        margin: 4px 0 12px;
+        font-size: 26px;
+        text-align: center;
+        letter-spacing: 0.4px;
+        color: var(--accent);
+      }
       h1 {
         margin: 0 0 12px;
         font-size: 28px;
@@ -56,6 +73,22 @@
       p { line-height: 1.6; margin: 8px 0; }
       .center { text-align: center; }
       .muted { color: var(--muted); }
+      .story {
+        margin: 0 0 16px;
+        text-align: center;
+        font-size: 17px;
+      }
+      .quote {
+        margin: 18px auto 24px;
+        padding: 16px 20px;
+        max-width: 520px;
+        background: rgba(185,144,94,0.08);
+        border-left: 4px solid var(--accent);
+        border-radius: 12px;
+        font-style: italic;
+        color: var(--muted);
+        line-height: 1.6;
+      }
       .details {
         margin: 18px 0 8px;
         padding: 12px 14px;
@@ -63,16 +96,127 @@
         border: 1px dashed #e6d8c4;
         border-radius: 10px;
       }
+      .details p {
+        margin: 6px 0;
+      }
+      .details a {
+        color: var(--accent);
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .details a:hover,
+      .details a:focus {
+        text-decoration: underline;
+      }
+      .couple {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        margin: 10px 0 22px;
+        flex-wrap: wrap;
+      }
+      .couple figure {
+        margin: 0;
+        text-align: center;
+      }
+      .couple img {
+        width: 160px;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 4px solid #f5ede1;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+      }
+      .couple figcaption {
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 15px;
+        letter-spacing: 0.3px;
+      }
+      .countdown {
+        text-align: center;
+        margin: 0 0 20px;
+        padding: 14px;
+        border-radius: 12px;
+        background: rgba(185,144,94,0.08);
+      }
+      .countdown p {
+        margin: 0 0 6px;
+      }
+      #countdown {
+        font-size: 22px;
+        letter-spacing: 0.5px;
+        color: var(--accent);
+        font-weight: 600;
+      }
+      #countdown span {
+        display: inline-block;
+        min-width: 48px;
+      }
+      .schedule {
+        margin: 22px 0 18px;
+        text-align: center;
+      }
+      .schedule h2 {
+        margin: 0 0 8px;
+        font-size: 20px;
+        letter-spacing: 0.3px;
+      }
+      .schedule ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 6px;
+      }
+      .schedule li {
+        padding: 8px 12px;
+        border-radius: 10px;
+        background: rgba(250, 247, 242, 0.9);
+        border: 1px solid #f0e6d6;
+      }
       .signature { margin-top: 18px; text-align: right; }
     </style>
   </head>
   <body>
     <div class="wrap">
       <article class="card" role="article" aria-label="Үлпөт тоюна чакыруу">
+        <div class="hero" role="img" aria-label="Жаңы жубайлардын сүрөтү">
+          <img src="img/together.png" alt="Жубайлардын биргелешкен сүрөтү" />
+        </div>
+        <p class="names">Аракет &amp; Мыскал</p>
         <h1>Үлпөт тоюна чакыруу</h1>
         <div class="divider" aria-hidden="true"></div>
 
         <p id="greeting">Урматтуу конок!</p>
+
+        <p class="story">
+          Кол кармашып жасаган ар бир кадамыбыз бизди ушул өзгөчө күнгө жеткирди.
+          Эми сүйүүбүздүн жаңы барагын жакындарыбыз менен бирге ачууга өзүңүздү чакырабыз.
+        </p>
+
+        <section class="couple" aria-label="Жубайлар тууралуу сүрөттөр">
+          <figure>
+            <img src="img/woman-icon.png" alt="Мыскалдын сүрөтү" />
+            <figcaption>Мыскал · Келин</figcaption>
+          </figure>
+          <figure>
+            <img src="img/man-icon.png" alt="Аракеттин сүрөтү" />
+            <figcaption>Аракет · Жигит</figcaption>
+          </figure>
+        </section>
+
+        <section class="countdown" aria-live="polite">
+          <p class="muted">Үлпөт тою башталганча:</p>
+          <div id="countdown">
+            <span data-unit="days">–</span> күн
+            <span data-unit="hours">–</span> саат
+            <span data-unit="minutes">–</span> мүнөт
+            <span data-unit="seconds">–</span> секунда
+          </div>
+        </section>
+
+        <p class="quote">«Берекелүү тагдырлар сүйүү менен башталып, урмат менен уланат»</p>
 
         <p>
           Сизди биздин үй-бүлөлүк майрамыбызга — үлпөт тоюбузга чакырабыз.
@@ -80,13 +224,25 @@
         </p>
 
         <section class="details" aria-label="Иш-чаранын маалыматтары">
-          <p class="center"><strong>Качан:</strong> 2025-ж. 12-октябрь, саат 18:00</p>
-          <p class="center"><strong>Кайда:</strong> Бишкек ш., (даректи бул жерге жазыңыз)</p>
+          <p class="center"><strong>Качан:</strong> 2025-ж. 5-октябрь, саат 16:00</p>
+          <p class="center"><strong>Кайда:</strong> Бишкек ш., «Оазис» рестораны</p>
+          <p class="center"><strong>Дарек картасы:</strong> <a href="https://2gis.kg/bishkek/firm/70000001063917945/74.319802%2C42.862593" target="_blank" rel="noopener">2ГИСтен караңыз</a></p>
+          <p class="center"><strong>Жубайлар:</strong> Аракет &amp; Мыскал</p>
+          <p class="center"><strong>Той ээси:</strong> Тынчтык &amp; Гүлкаир</p>
         </section>
 
+        <section class="schedule" aria-label="Кечкинин тартиби">
+          <h2>Кечкинин жүрүшү</h2>
+          <ul>
+            <li><strong>16:00</strong> — Конокторду тосуп алуу</li>
+            <li><strong>17:00</strong> — Салтанаттуу бөлүштүрүү жана ак баталар</li>
+            <li><strong>18:30</strong> — Даамдуу кечки тамак жана куттуктоолор</li>
+            <li><strong>20:00</strong> — Бий, ыр жана көңүл ачуулар</li>
+          </ul>
+        </section>
         <p class="muted center">Сиздин келгениңиз — биз үчүн чоң сыймык.</p>
 
-        <p class="signature">Изги тилек менен, келин-жигит</p>
+        <p class="signature">Сүйүү менен, Аракет &amp; Мыскал — кубанычыбызды бөлүшкөнүңүз үчүн алдын ала ыраазычылык билдиребиз</p>
       </article>
     </div>
 
@@ -109,7 +265,41 @@
           // If anything goes wrong, keep the default text
         }
       })();
+
+      (function () {
+        const weddingDate = new Date('2025-10-05T16:00:00+06:00');
+        const countdownEl = document.getElementById('countdown');
+        if (!countdownEl || Number.isNaN(weddingDate.getTime())) return;
+
+        const assign = (attr, value) => {
+          const span = countdownEl.querySelector(`[data-unit="${attr}"]`);
+          if (span) span.textContent = value;
+        };
+
+        const update = () => {
+          const now = new Date();
+          const diff = weddingDate.getTime() - now.getTime();
+          if (diff <= 0) {
+            countdownEl.textContent = 'Салтанат башталды!';
+            clearInterval(timer);
+            return;
+          }
+
+          const totalSeconds = Math.floor(diff / 1000);
+          const days = Math.floor(totalSeconds / 86400);
+          const hours = Math.floor((totalSeconds % 86400) / 3600);
+          const minutes = Math.floor((totalSeconds % 3600) / 60);
+          const seconds = totalSeconds % 60;
+
+          assign('days', days);
+          assign('hours', hours.toString().padStart(2, '0'));
+          assign('minutes', minutes.toString().padStart(2, '0'));
+          assign('seconds', seconds.toString().padStart(2, '0'));
+        };
+
+        update();
+        const timer = setInterval(update, 1000);
+      })();
     </script>
   </body>
   </html>
-
